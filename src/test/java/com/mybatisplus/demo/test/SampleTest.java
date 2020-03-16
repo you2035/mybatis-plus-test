@@ -28,5 +28,12 @@ public class SampleTest {
 		List<User> userList = userMapper.selectList(null);
 		Assert.assertEquals(5, userList.size());
 		userList.forEach(System.out::println);
+
+		User user = new User();
+		user.setAge(78);
+		user.setEmail("117117312@qq.com");
+		user.setName("张三");
+		boolean isInsert = userMapper.save(user);
+		System.out.println(isInsert);
 	}
 }

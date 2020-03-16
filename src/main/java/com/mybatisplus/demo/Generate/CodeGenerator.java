@@ -45,7 +45,7 @@ public class CodeGenerator {
 
 		// 全局配置
 		GlobalConfig gc = new GlobalConfig();
-		String projectPath = "D:/QrCode/mybatis-plus-test";
+		String projectPath = "D:/Code/mybatis-plus-test";
 		gc.setOutputDir(projectPath + "/src/main/java");
 		gc.setAuthor("liuxin");
 		gc.setOpen(false);
