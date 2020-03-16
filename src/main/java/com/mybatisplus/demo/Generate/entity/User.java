@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.annotation.KeySequence;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 /**
  * @Auther: liuxin
@@ -12,6 +14,8 @@ import lombok.Data;
  * @Description:
  */
 @Data
+@Getter
+@Setter
 @KeySequence("SEQ_USER")
 @TableName("user")
 public class User {
