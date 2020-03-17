@@ -1,4 +1,4 @@
-package com.mybatisplus.demo.Generate.Service;
+package com.mybatisplus.demo.Generate.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.mybatisplus.demo.Generate.entity.User;

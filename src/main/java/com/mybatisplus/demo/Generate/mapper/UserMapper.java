@@ -12,6 +12,4 @@ import com.mybatisplus.demo.Generate.entity.User;
 public interface UserMapper extends BaseMapper<User> {
 
 	public Integer selectMaxAge();
-
-	boolean save(User user);
 }
