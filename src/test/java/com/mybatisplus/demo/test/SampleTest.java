@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -39,11 +40,12 @@ public class SampleTest {
 	}
 
 	@Test
+	@Transactional //该注解操作数据库对数据库无污染
 	public void testInsert(){
 		User user = new User();
 		user.setAge(38);
 		user.setEmail("11232317312@qq.com");
-		user.setName("李四");
+		user.setName("李五");
 		boolean isInsert = userService.save(user);
 		System.out.println(isInsert);
 	}
