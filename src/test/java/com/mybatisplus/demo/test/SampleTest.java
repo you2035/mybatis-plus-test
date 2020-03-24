@@ -13,7 +13,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.function.Function;
 
 
 /**
@@ -73,5 +76,30 @@ public class SampleTest {
 		wrapper.lt("age","40");
 		List<User> userList = userService.list(wrapper);
 		userList.forEach(System.out::println);
+	}
+
+	@Test
+	public void testLike(){
+		QueryWrapper<User> wrapper = Wrappers.query();
+		wrapper.ne("age","18").likeRight("name","李");
+		List<User> users = userService.list(wrapper);
+		users.forEach(System.out::println);
+	}
+
+	@Test
+	public void testAllEq(){
+		QueryWrapper<User> wrapper = Wrappers.query();
+		Map<String,Object> map = new HashMap<>();
+		map.put("age","18");
+		map.put("email",null);
+		wrapper.allEq(map);
+		List<User> users = userService.list(wrapper);
+		users.forEach(System.out::println);
+	}
+
+	@Test
+	public void testUser(){
+		List<User> users = userMapper.getAllUser();
+		users.forEach(System.out::println);
 	}
 }
