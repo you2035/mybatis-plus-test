@@ -1,7 +1,9 @@
 package com.mybatisplus.demo.Generate.mapper;
 
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.mybatisplus.demo.Generate.entity.User;
 import org.apache.ibatis.annotations.Select;
 
@@ -18,4 +20,6 @@ public interface UserMapper extends BaseMapper<User> {
 
 	@Select("select * from user")
 	public List<User> getAllUser();
+
+	Object page(IPage<User> page, QueryWrapper<User> wrapper);
 }
